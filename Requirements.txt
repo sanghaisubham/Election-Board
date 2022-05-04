@@ -1,0 +1,29 @@
+Requirements
+
+Citizen
+=======
+1) Nominate themselves for election as contender
+2) See list of contenders and respective manifesto
+3) Rate idea on scale of 0 to 10
+4) Delete rating
+5) Citizen added as follower if rating>5
+
+Candidate
+==========
+1) Post Manifesto
+2) Has a follower list
+3) Send out notification to follower when idea is posted
+
+Manifesto
+========
+
+1) Can have max of 3 ideas
+
+
+System
+======
+
+1) Remove contender from list if he/she has at least 1 idea rated less than 5 by more than 3 voters
+2) Max Sum of Avg rating/ ideas => Winner
+3) Avg rating per idea = Sum of rating/ No of voters
+4) Final rating = Avg Rating of idea1 + Avg rating of idea2 + Avg rating of idea3
