@@ -1,4 +1,5 @@
-Requirements
+Requirement
+-----------
 
 Citizen
 =======
@@ -15,15 +16,27 @@ Candidate
 3) Send out notification to follower when idea is posted
 
 Manifesto
-========
+=========
 
 1) Can have max of 3 ideas
 
 
-System
-======
+Election Board
+==============
 
 1) Remove contender from list if he/she has at least 1 idea rated less than 5 by more than 3 voters
 2) Max Sum of Avg rating/ ideas => Winner
 3) Avg rating per idea = Sum of rating/ No of voters
 4) Final rating = Avg Rating of idea1 + Avg rating of idea2 + Avg rating of idea3
+
+
+=====================================================================================================================
+
+Assumption
+-----------
+
+1) Idea position in idea array is used to uniquely identify an idea
+2) Every Citizen can give only one rating for one idea
+3) Citizen names are unique
+4) Don't need to remove follower if rating is removed
+5)

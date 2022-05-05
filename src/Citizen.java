@@ -8,7 +8,7 @@ public class Citizen {
 
     void rateIdea(Candidate candidate, Idea idea, int rating){
         idea.addRating(rating,this);
-        if(rating>ElectionConstants.HIGH_RATING_THRESHOLD){
+        if(rating>ElectionConstants.GOOD_IDEA_THRESHOLD){
             candidate.addFollower(this);
         }
     }

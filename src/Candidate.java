@@ -1,4 +1,3 @@
-import java.awt.desktop.SystemEventListener;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -6,7 +5,8 @@ import java.util.Scanner;
 import static java.lang.Math.min;
 
 public class Candidate extends Citizen{
-    private static int candidateId=0;
+    private static int candidateCount=1;
+    private int candidateId;
     private String candidateSymbol;
     private Manifesto manifesto;
 
@@ -14,7 +14,7 @@ public class Candidate extends Citizen{
 
     public Candidate(Citizen citizen,String candidateSymbol){
         super(citizen.name);
-        candidateId++;
+        this.candidateId=candidateCount++;
         this.candidateSymbol=candidateSymbol;
         this.followers = new ArrayList<>();
     }
@@ -28,7 +28,7 @@ public class Candidate extends Citizen{
     }
 
     void displayCandidate(){
-        System.out.println("==============CANDIDATE: "+candidateId+" =================================");
+        System.out.println("====================CANDIDATE: "+candidateId+" =======================================");
         System.out.println("Candidate Name: "+name);
         System.out.println("Candidate Symbol: "+candidateSymbol);
         manifesto.displayManifesto();
@@ -40,6 +40,7 @@ public class Candidate extends Citizen{
             System.out.println("The citizen is already a follower");
         }
         else {
+            System.out.println("Citizen "+follower.name+" is added as a follower of "+this.name);
             followers.add(follower);
         }
     }
@@ -53,7 +54,7 @@ public class Candidate extends Citizen{
         if(followers.isEmpty())
             return;
         for (Citizen citizen:followers){
-            System.out.println("Sending notification to citizen: "+citizen);
+            System.out.println("Sending notification to citizen: "+citizen.name);
             //sendNotification(citizen);
         }
     }

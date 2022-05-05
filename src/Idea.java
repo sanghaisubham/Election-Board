@@ -23,9 +23,14 @@ public class Idea {
 
     void displayIdeaStats(){
         System.out.println("Idea "+idea);
+        System.out.println("----------");
         for(Map.Entry<String, Integer> rating:ratings.entrySet()){
             System.out.println(rating.getKey()+"\t"+rating.getValue());
         }
+        System.out.println("");
+        System.out.println("Low rating count: "+lowRatingCount);
+        System.out.println("High rating count: "+highRatingCount);
+        System.out.println("Total rating: "+totalRating);
     }
 
     public float getAverageRating(){
@@ -35,23 +40,27 @@ public class Idea {
     void addRating(int rating, Citizen citizen){
         ratings.put(citizen.name,rating);
         totalRating+=rating;
-        if(rating<ElectionConstants.HIGH_RATING_THRESHOLD){
-            highRatingCount++;
+        if(rating<ElectionConstants.GOOD_IDEA_THRESHOLD){
+            lowRatingCount++;
         }
         else{
-            lowRatingCount++;
+            highRatingCount++;
         }
     }
 
     void removeRating(Citizen citizen){
+        if(!ratings.containsKey(citizen.name)){
+            System.out.println("Citizen "+citizen+" does not have a rating for the idea");
+            return;
+        }
         int rating = ratings.get(citizen.name);
-        ratings.remove(citizen);
+        ratings.remove(citizen.name);
         totalRating-=rating;
-        if(rating<ElectionConstants.HIGH_RATING_THRESHOLD){
-            highRatingCount--;
+        if(rating<ElectionConstants.GOOD_IDEA_THRESHOLD){
+            lowRatingCount--;
         }
         else{
-            lowRatingCount--;
+            highRatingCount--;
         }
     }
 }

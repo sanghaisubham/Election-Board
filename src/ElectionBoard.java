@@ -69,12 +69,11 @@ public class ElectionBoard {
             String candidateSymbol= sc.nextLine();
 
             System.out.println("Enter Candidate Manifesto");
-          //Optional<Citizen> citizen = citizens.stream().filter(x->x.name.equalsIgnoreCase(candidate)).findFirst();
-              Citizen citizen = citizenHashMap.get(candidateName);
-              Candidate candidateObj = new Candidate(citizen,candidateSymbol);
-              candidateObj.createManifesto();
-              candidates.add(candidateObj);
-              candidateHashMap.put(candidateName,candidateObj);
+            Citizen citizen = citizenHashMap.get(candidateName);
+            Candidate candidateObj = new Candidate(citizen,candidateSymbol);
+            candidateObj.createManifesto();
+            candidates.add(candidateObj);
+            candidateHashMap.put(candidateName,candidateObj);
           }
         }
 
@@ -102,11 +101,16 @@ public class ElectionBoard {
             System.out.println("Enter the rating he wants to give");
             int rating = Integer.parseInt(sc.nextLine());
             citizenHashMap.get(citizen).rateIdea(candidateObj,candidateObj.getManifesto().getIdeas().get(ideaNumber-1),rating);
-            if(!candidateObj.isCandidateEligible()){
-                candidateHashMap.remove(candidate);
-                this.candidates.remove(candidateObj);
-            }
+            checkAndRemoveCandidate(candidateObj,candidate);
             candidateObj.getManifesto().displayManifestoStats();
+    }
+
+    void checkAndRemoveCandidate(Candidate candidateObj, String candidateName){
+        if(!candidateObj.isCandidateEligible()){
+            System.out.println("Removing "+candidateName+" from elections");
+            candidateHashMap.remove(candidateName);
+            this.candidates.remove(candidateObj);
+        }
     }
 
     void removeRating(){

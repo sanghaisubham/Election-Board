@@ -21,7 +21,7 @@ public class Manifesto {
 
     public boolean isAcceptedManifesto(){
         for(Idea idea:ideas){
-            if(idea.lowRatingCount>ElectionConstants.MANIFESTO_UNACCEPTED_COUNT){
+            if(idea.lowRatingCount>ElectionConstants.MANIFESTO_ACCEPTANCE_COUNT){
                 return false;
             }
         }
@@ -33,6 +33,7 @@ public class Manifesto {
         int ideaCount= 1;
         for(Idea idea:ideas){
             System.out.println("Idea "+ideaCount++);
+            System.out.println("----------");
             idea.displayIdea();
         }
     }
