@@ -1,6 +1,5 @@
 # Election-Board
 ```
-/Users/subhamsanghai/Library/Java/JavaVirtualMachines/openjdk-17.0.2/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA Edu.app/Contents/lib/idea_rt.jar=49895:/Applications/IntelliJ IDEA Edu.app/Contents/bin -Dfile.encoding=UTF-8 -classpath /Users/subhamsanghai/IdeaProjects/Eboard/out/production/Eboard:/Users/subhamsanghai/Library/Application Support/JetBrains/IdeaIE2021.3/plugins/Kotlin/kotlinc/lib/kotlin-stdlib.jar:/Users/subhamsanghai/Library/Application Support/JetBrains/IdeaIE2021.3/plugins/Kotlin/kotlinc/lib/kotlin-reflect.jar:/Users/subhamsanghai/Library/Application Support/JetBrains/IdeaIE2021.3/plugins/Kotlin/kotlinc/lib/kotlin-test.jar ElectionDriver
 Enter the citizen information of the city
 =========================================
 Enter the number of citizens in the city
