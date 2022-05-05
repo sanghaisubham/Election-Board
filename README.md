@@ -1,19 +1,19 @@
 # Election-Board
 ```
-/Users/subhamsanghai/Library/Java/JavaVirtualMachines/openjdk-17.0.2/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA Edu.app/Contents/lib/idea_rt.jar=65031:/Applications/IntelliJ IDEA Edu.app/Contents/bin -Dfile.encoding=UTF-8 -classpath /Users/subhamsanghai/IdeaProjects/Eboard/out/production/Eboard:/Users/subhamsanghai/Library/Application Support/JetBrains/IdeaIE2021.3/plugins/Kotlin/kotlinc/lib/kotlin-stdlib.jar:/Users/subhamsanghai/Library/Application Support/JetBrains/IdeaIE2021.3/plugins/Kotlin/kotlinc/lib/kotlin-reflect.jar:/Users/subhamsanghai/Library/Application Support/JetBrains/IdeaIE2021.3/plugins/Kotlin/kotlinc/lib/kotlin-test.jar ElectionDriver
+/Users/subhamsanghai/Library/Java/JavaVirtualMachines/openjdk-17.0.2/Contents/Home/bin/java -javaagent:/Applications/IntelliJ IDEA Edu.app/Contents/lib/idea_rt.jar=49895:/Applications/IntelliJ IDEA Edu.app/Contents/bin -Dfile.encoding=UTF-8 -classpath /Users/subhamsanghai/IdeaProjects/Eboard/out/production/Eboard:/Users/subhamsanghai/Library/Application Support/JetBrains/IdeaIE2021.3/plugins/Kotlin/kotlinc/lib/kotlin-stdlib.jar:/Users/subhamsanghai/Library/Application Support/JetBrains/IdeaIE2021.3/plugins/Kotlin/kotlinc/lib/kotlin-reflect.jar:/Users/subhamsanghai/Library/Application Support/JetBrains/IdeaIE2021.3/plugins/Kotlin/kotlinc/lib/kotlin-test.jar ElectionDriver
 Enter the citizen information of the city
 =========================================
 Enter the number of citizens in the city
 5
-Print name of Citizen1
+Print name of Citizen 1
 A
-Print name of Citizen2
+Print name of Citizen 2
 B
-Print name of Citizen3
+Print name of Citizen 3
 C
-Print name of Citizen4
+Print name of Citizen 4
 D
-Print name of Citizen5
+Print name of Citizen 5
 E
 Enter the candidate details
 =========================================
@@ -70,41 +70,22 @@ Please Enter your choice
 Add Rating
 =========================================
 Enter the name of citizen who wants to add rating
-D
+B
 Enter the name of candidate he wants to add rating for
 A
 Enter the idea number he wants to add rating for
 1
 Enter the rating he wants to give
-1
+8
+Citizen B is added as a follower of A
 Idea IDEA-A1
 ----------
-D	1
-
-Low rating count: 1
-High rating count: 0
-Total rating: 1
-
-ENTER 1 FOR ADDING RATING
-ENTER 2 FOR REMOVING RATING
-ENTER 3 FOR ADDING IDEA
-ENTER 0 TO EXIT
-Please Enter your choice
-2
-Remove Rating
-=========================================
-Enter the name of citizen who wants to remove his rating
-D
-Enter the name of candidate, he wants to remove rating for
-A
-Enter the idea number he wants to remove rating for
-1
-Idea IDEA-A1
-----------
+B	8
 
 Low rating count: 0
-High rating count: 0
-Total rating: 0
+High rating count: 1
+Total rating: 8
+Average rating: 8.0
 
 ENTER 1 FOR ADDING RATING
 ENTER 2 FOR REMOVING RATING
@@ -117,19 +98,20 @@ Add Rating
 Enter the name of citizen who wants to add rating
 C
 Enter the name of candidate he wants to add rating for
-A
+B
 Enter the idea number he wants to add rating for
 1
 Enter the rating he wants to give
-7
-Citizen C is added as a follower of A
-Idea IDEA-A1
+9
+Citizen C is added as a follower of B
+Idea IDEA-B1
 ----------
-C	7
+C	9
 
 Low rating count: 0
 High rating count: 1
-Total rating: 7
+Total rating: 9
+Average rating: 9.0
 
 ENTER 1 FOR ADDING RATING
 ENTER 2 FOR REMOVING RATING
@@ -143,6 +125,7 @@ Enter the name of candidate who wants to add an idea
 A
 Enter the idea he wants to add
 IDEA-A2
+Sending notification to citizen: B
 Sending notification to citizen: C
 ====================CANDIDATE: 1 =======================================
 Candidate Name: A
@@ -174,11 +157,36 @@ Enter the rating he wants to give
 2
 Idea IDEA-B1
 ----------
+C	9
+E	2
+
+Low rating count: 1
+High rating count: 1
+Total rating: 11
+Average rating: 5.5
+
+ENTER 1 FOR ADDING RATING
+ENTER 2 FOR REMOVING RATING
+ENTER 3 FOR ADDING IDEA
+ENTER 0 TO EXIT
+Please Enter your choice
+2
+Remove Rating
+=========================================
+Enter the name of citizen who wants to remove his rating
+C
+Enter the name of candidate, he wants to remove rating for
+B
+Enter the idea number he wants to remove rating for
+1
+Idea IDEA-B1
+----------
 E	2
 
 Low rating count: 1
 High rating count: 0
 Total rating: 2
+Average rating: 2.0
 
 ENTER 1 FOR ADDING RATING
 ENTER 2 FOR REMOVING RATING
@@ -195,15 +203,16 @@ B
 Enter the idea number he wants to add rating for
 1
 Enter the rating he wants to give
-3
+2
 Idea IDEA-B1
 ----------
-D	3
+D	2
 E	2
 
 Low rating count: 2
 High rating count: 0
-Total rating: 5
+Total rating: 4
+Average rating: 2.0
 
 ENTER 1 FOR ADDING RATING
 ENTER 2 FOR REMOVING RATING
@@ -220,16 +229,17 @@ B
 Enter the idea number he wants to add rating for
 1
 Enter the rating he wants to give
-4
+2
 Idea IDEA-B1
 ----------
-C	4
-D	3
+C	2
+D	2
 E	2
 
 Low rating count: 3
 High rating count: 0
-Total rating: 9
+Total rating: 6
+Average rating: 2.0
 
 ENTER 1 FOR ADDING RATING
 ENTER 2 FOR REMOVING RATING
@@ -246,18 +256,19 @@ B
 Enter the idea number he wants to add rating for
 1
 Enter the rating he wants to give
-3
+2
 Removing B from elections
 Idea IDEA-B1
 ----------
-A	3
-C	4
-D	3
+A	2
+C	2
+D	2
 E	2
 
 Low rating count: 4
 High rating count: 0
-Total rating: 12
+Total rating: 8
+Average rating: 2.0
 
 ENTER 1 FOR ADDING RATING
 ENTER 2 FOR REMOVING RATING
@@ -266,5 +277,9 @@ ENTER 0 TO EXIT
 Please Enter your choice
 0
 Exiting from the Menu
-The Winner is : A with total rating as 7.0
+
+The Winner is : A with total rating as 8.0
+
+Process finished with exit code 0
+
 ```

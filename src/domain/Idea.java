@@ -1,3 +1,6 @@
+package domain;
+
+import service.ConsoleUtility;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -18,29 +21,33 @@ public class Idea {
     }
 
     void displayIdea(){
-        System.out.println("The idea is: "+idea);
+        ConsoleUtility.log("The idea is: "+idea);
     }
 
     void displayIdeaStats(){
-        System.out.println("Idea "+idea);
-        System.out.println("----------");
+        ConsoleUtility.log("Idea "+idea);
+        ConsoleUtility.log("----------");
         for(Map.Entry<String, Integer> rating:ratings.entrySet()){
-            System.out.println(rating.getKey()+"\t"+rating.getValue());
+            ConsoleUtility.log(rating.getKey()+"\t"+rating.getValue());
         }
-        System.out.println("");
-        System.out.println("Low rating count: "+lowRatingCount);
-        System.out.println("High rating count: "+highRatingCount);
-        System.out.println("Total rating: "+totalRating);
+        ConsoleUtility.log("");
+        ConsoleUtility.log("Low rating count: "+lowRatingCount);
+        ConsoleUtility.log("High rating count: "+highRatingCount);
+        ConsoleUtility.log("Total rating: "+totalRating);
+        ConsoleUtility.log("Average rating: "+getAverageRating());
     }
 
     public float getAverageRating(){
+        int totalRatingCount = lowRatingCount+highRatingCount;
+        if(totalRatingCount==0)
+            return 0.0F;
         return (float)(totalRating)/(float) (lowRatingCount+highRatingCount);
     }
 
     void addRating(int rating, Citizen citizen){
         ratings.put(citizen.name,rating);
         totalRating+=rating;
-        if(rating<ElectionConstants.GOOD_IDEA_THRESHOLD){
+        if(rating< ElectionConstants.GOOD_IDEA_THRESHOLD){
             lowRatingCount++;
         }
         else{
@@ -50,13 +57,13 @@ public class Idea {
 
     void removeRating(Citizen citizen){
         if(!ratings.containsKey(citizen.name)){
-            System.out.println("Citizen "+citizen+" does not have a rating for the idea");
+            ConsoleUtility.log("Citizen "+citizen+" does not have a rating for the idea");
             return;
         }
         int rating = ratings.get(citizen.name);
         ratings.remove(citizen.name);
         totalRating-=rating;
-        if(rating<ElectionConstants.GOOD_IDEA_THRESHOLD){
+        if(rating< ElectionConstants.GOOD_IDEA_THRESHOLD){
             lowRatingCount--;
         }
         else{

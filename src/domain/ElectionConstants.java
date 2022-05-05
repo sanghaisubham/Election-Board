@@ -1,3 +1,5 @@
+package domain;
+
 public class ElectionConstants {
 
     public static final int MAX_IDEA_COUNT=3;

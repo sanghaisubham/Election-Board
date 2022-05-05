@@ -1,20 +1,21 @@
-import java.util.Scanner;
+import service.ConsoleUtility;
+import service.ElectionServiceImpl;
 
 public class ElectionDriver {
     public static void main(String[] args){
-        ElectionBoard board = new ElectionBoard();
+        ElectionServiceImpl electionService = new ElectionServiceImpl();
 
         System.out.println("Enter the citizen information of the city");
         System.out.println("=========================================");
-        board.addCitizens();
+        electionService.addCitizens();
 
         System.out.println("Enter the candidate details");
         System.out.println("=========================================");
-        board.addCandidates();
+        electionService.addCandidates();
 
         System.out.println("The candidates contesting in election are:");
         System.out.println("=========================================");
-        board.electionDetails();
+        electionService.getElectionDetails();
         System.out.println("=========================================");
 
         while (true){
@@ -24,24 +25,23 @@ public class ElectionDriver {
             System.out.println("ENTER 3 FOR ADDING IDEA");
             System.out.println("ENTER 0 TO EXIT");
             System.out.println("Please Enter your choice");
-            Scanner sc= new Scanner(System.in);
-            int option=Integer.parseInt(sc.nextLine());
+            int option= ConsoleUtility.inputNumber();
             boolean exit=false;
             switch (option) {
                 case 1 -> {
                     System.out.println("Add Rating");
                     System.out.println("=========================================");
-                    board.addRating();
+                    electionService.addRating();
                 }
                 case 2 -> {
                     System.out.println("Remove Rating");
                     System.out.println("=========================================");
-                    board.removeRating();
+                    electionService.removeRating();
                 }
                 case 3 -> {
                     System.out.println("Add Idea");
                     System.out.println("=========================================");
-                    board.addIdea();
+                    electionService.addIdea();
                 }
                 default -> exit = true;
             }
@@ -50,6 +50,6 @@ public class ElectionDriver {
                 break;
             }
         }
-        board.decideWinner();
+        electionService.decideWinner();
     }
 }
